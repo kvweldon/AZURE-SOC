@@ -14,10 +14,13 @@ In this project, I demonstrate my working knowledge of the Azure cloud platform.
 - AzureNetworkAnalytics_CL (Malicious Flows allowed into our honeynet)
 
 ## Architecture Before Hardening / Security Controls
-![Architecture Diagram](https://i.imgur.com/aBDwnKb.jpg)
+![image](https://github.com/kvweldon/AZURE-SOC/assets/141193154/38a0f3fe-4e0f-43ed-b5bd-f900c9977100)
+
+
 
 ## Architecture After Hardening / Security Controls
-![Architecture Diagram](https://i.imgur.com/YQNa9Pp.jpg)
+![image](https://github.com/kvweldon/AZURE-SOC/assets/141193154/d2818f6a-b52f-40cf-a891-ebbff3fb0091)
+
 
 The architecture of the mini honeynet in Azure consists of the following components:
 
