@@ -1,9 +1,11 @@
 # Building a SOC + Honeynet in Azure (Live Traffic)
-![Cloud Honeynet / SOC](https://i.imgur.com/ZWxe03e.jpg)
+![image](https://github.com/kvweldon/AZURE-SOC/assets/141193154/32724fd5-3bfe-4f03-aeaa-516b85cbaa01)
+
+
 
 ## Introduction
 
-In this project, I build a mini honeynet in Azure and ingest log sources from various resources into a Log Analytics workspace, which is then used by Microsoft Sentinel to build attack maps, trigger alerts, and create incidents. I measured some security metrics in the insecure environment for 24 hours, apply some security controls to harden the environment, measure metrics for another 24 hours, then show the results below. The metrics we will show are:
+In this project, I demonstrate my working knowledge of the Azure cloud platform. First, I build a mini honeynet within Azure and ingest log sources from various resources, including two Virtual Machines, a Storage Account and a Key Vault, into a Log Analytics workspace. This is used by Microsoft Sentinel to build attack maps, trigger alerts, and create incidents. To assess the security posture, I measure pertinent security metrics within the vulnerable environment for a 24 hour duration. I then implent security controls to harden the environment, measure the same metrics for another 24 hours, then show the results below. The metrics I will show are:
 
 - SecurityEvent (Windows Event Logs)
 - Syslog (Linux Event Logs)
