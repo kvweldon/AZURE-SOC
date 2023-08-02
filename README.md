@@ -32,9 +32,9 @@ The architecture of the mini honeynet in Azure consists of the following compone
 - Azure Storage Account
 - Microsoft Sentinel
 
-For the "BEFORE" metrics, all resources were originally deployed, exposed to the internet. The Virtual Machines had both their Network Security Groups and built-in firewalls wide open, and all other resources are deployed with public endpoints visible to the Internet; aka, no use for Private Endpoints.
+For the "BEFORE" metrics, all resources were initially deployed with unrestricted access to the internet. The Virtual Machines lacked proper Network Security Groups and built-in firewalls, leaving them vulnerable to potential threats. Additionally, all other resources were deployed with public endpoints exposed to the Internet, rendering the use of Private Endpoints unnecessary. This configuration posed significant security risks and potential avenues for unauthorized access or cyberattacks.
 
-For the "AFTER" metrics, Network Security Groups were hardened by blocking ALL traffic with the exception of my admin workstation, and all other resources were protected by their built-in firewalls as well as Private Endpoint
+For the "AFTER" metrics, Network Security Groups were hardened by blocking ALL traffic with the exception of my admin workstation. The built-in firewalls for the other resources were reconfigured and I created a Private Endpoint, which only allowed access to the resources from within the VNet.
 
 ## Attack Maps Before Hardening / Security Controls
 ![(before)nsg-malicious-allowed-in](https://github.com/kvweldon/AZURE-SOC/assets/141193154/48739ffd-b9f0-4184-a219-77abffd239ef)
@@ -78,6 +78,10 @@ Stop Time	2023-07-30 11:50
 
 ## Conclusion
 
-In this project, a mini honeynet was constructed in Microsoft Azure and log sources were integrated into a Log Analytics workspace. Microsoft Sentinel was employed to trigger alerts and create incidents based on the ingested logs. Additionally, metrics were measured in the insecure environment before security controls were applied, and then again after implementing security measures. It is noteworthy that the number of security events and incidents were drastically reduced after the security controls were applied, demonstrating their effectiveness.
+In this project, I setup of a mini honeynet in Microsoft Azure and integrated log sources into a Log Analytics workspace. To bolster threat detection capabilities, I deployed Microsoft Sentinel, a cutting-edge SIEM solution, to automatically generate alerts and incidents based on the ingested logs.
 
-It is worth noting that if the resources within the network were heavily utilized by regular users, it is likely that more security events and alerts may have been generated within the 24-hour period following the implementation of the security controls.
+To assess the impact of my security measures, I conducted an evaluation of metrics in the vulnerable environment prior to implementing security controls. After implementing the measures, I reevaluated the metrics to observe any changes in security events and incidents. The results were remarkable, with a significant reduction in security events and incidents, validating the effectiveness of my security controls.
+
+However, it's essential to recognize that the network's resource usage patterns can influence the number of generated security events and alerts. In scenarios where regular users heavily utilize network resources, there is a possibility of observing an increased volume of security events and alerts within the 24-hour period following the implementation of security controls. To mitigate false positives, a careful analysis of these events is necessary to distinguish genuine threats from legitimate user activities.
+
+In summary, this project showcases the successful implementation of a well-designed honeynet integrated with a robust SIEM solution to bolster threat detection and incident response capabilities. The measured reduction in security events and incidents underscores the effectiveness of the security controls applied. As a cybersecurity analyst, I understand the importance of contextually analyzing security events, taking into account network usage patterns, to ensure accurate threat identification and optimize incident response efforts.
