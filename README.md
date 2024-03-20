@@ -5,7 +5,7 @@
 
 ## Introduction
 
-In this project, I demonstrate my working knowledge of the Azure cloud platform. First, I build a mini honeynet within Azure and ingest log sources from various resources, including two Virtual Machines, a Storage Account and a Key Vault, into a Log Analytics workspace. This is used by Microsoft Sentinel to build attack maps, trigger alerts, and create incidents. To assess the security posture, I measure pertinent security metrics within the vulnerable environment for a 24 hour duration. I then implent security controls to harden the environment, measure the same metrics for another 24 hours, then show the results below. The metrics I will show are:
+In this project, I demonstrate my working knowledge of the Azure cloud platform. First, I built a mini honeynet within Azure and ingested log sources from various resources, including two Virtual Machines, a Storage Account and a Key Vault, into a Log Analytics workspace. This is used by Microsoft Sentinel to build attack maps, trigger alerts, and create incidents. To assess the security posture, I measured pertinent security metrics within the vulnerable environment for a 24 hour duration. I then implented security controls to harden the environment, measure the same metrics for another 24 hours, then show the results below. The metrics showed are:
 
 - SecurityEvent (Windows Event Logs)
 - Syslog (Linux Event Logs)
